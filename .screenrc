@@ -1,0 +1,17 @@
+defutf8 on
+defencoding utf-8
+encoding utf8 utf8
+escape ^z^z
+defscrollback 10000
+
+hardstatus alwayslastline "%-w%10L>%{=b bw}%n %t%{-}%+w %=%H"
+
+
+# 256 colors
+term xterm-256color
+termcapinfo xterm* 'Co#256:pa#32767:AB=\E[48;5;%dm:AF=\E[38;5;%dm:'
+
+# resize
+termcapinfo xterm* 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+
+#altscreen on
