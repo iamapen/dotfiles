@@ -1,0 +1,10 @@
+[user]
+	name = pen
+	email = pen@studiopoppy.com
+[alias]
+	show-graph = log --graph --abbrev-commit --pretty=oneline
+[core]
+	editor = vim
+#	pager = lv -c
+[color]
+	ui = auto
