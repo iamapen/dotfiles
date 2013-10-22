@@ -1,8 +1,12 @@
 #!/bin/sh
 
 # for Let's note (Left=無変換 Right=変換)
-xmodmap -e 'keycode 102 = Pointer_Button1'
-xmodmap -e 'keycode 100 = Pointer_Button3'
+#xmodmap -e 'keycode 102 = Pointer_Button1'
+#xmodmap -e 'keycode 100 = Pointer_Button3'
+
+# for Let's note (Left=変換 Right=)
+xmodmap -e 'keycode 100 = Pointer_Button1'
+xmodmap -e 'keycode 135 = Pointer_Button3'
 
 # enable mousekey and expire off
 xkbset m
