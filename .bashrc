@@ -4,7 +4,7 @@
 export PS1="[\[\033[40m\]\[\033[1;36m\]\t\[\033[0m\] \u@\h \W]$ "
 export SVN_EDITOR=vim
 
-umask 022
+umask 0022
 
 stty stop undef
 

@@ -1,0 +1,33 @@
+[user]
+	name = pen
+	email = iamapen@mail.studiopoppy.com
+[alias]
+    show-graph = log --graph --abbrev-commit --pretty=oneline
+    graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
+    diff = diff --word-diff
+    diffs = diff --name-only
+    vimdiff = difftool --tool=vimdiff --no-prompt
+
+    gdiff = difftool --tool=WinMerge
+[core]
+	editor = vim
+#	pager = lv -c
+	filemode = true
+    autocrlf = false
+[color]
+	ui = auto
+
+[diff]
+    guitool = WinMerge
+[difftool]
+    prompt = false
+[difftool "WinMerge"]
+    path = C:/apps/WinMerge/WinMergeU.exe
+    cmd = \"C:/apps/WinMerge/WinMergeU.exe\" -e -x -ub -wl -dl \"Base\" -dr \"Mine\" \"C:/cygwin$LOCAL\" \"$REMOTE\"
+
+[merge]
+    tool = WinMerge
+[mergetool "WinMerge"]
+    path = C:/apps/WinMerge/WinMergeU.exe
+    cmd = \"C:/apps/WinMerge/WinMergeU.exe\" /m /r=\"MERGED\" \"C:/cygwin$LOCAL\" \"BASE\" \"$REMOTE\"
+
