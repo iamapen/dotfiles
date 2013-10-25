@@ -7,6 +7,9 @@
     diff = diff --word-diff
     diffs = diff --name-only
     vimdiff = difftool --tool=vimdiff --no-prompt
+    co = checkout
+    stat = status
+    di = diff
 [core]
 	editor = vim
 #	pager = lv -c
