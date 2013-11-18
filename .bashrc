@@ -22,14 +22,14 @@ alias ll='ls -la --color=auto'
 alias la='ls -aF --color=auto'
 
 # bash-completion
-PREFIX=
-BASH_COMPLETION=$PREFIX/etc/bash_completion
-BASH_COMPLETION_DIR=$PREFIX/etc/bash_completion.d
-BASH_COMPLETION_COMPAT_DIR=$PREFIX/etc/bash_completion.d
-COMP_CONFIGURE_HINTS=1
-MYBC=/home/pen/etc/bash_completion.d
-if [ -f $BASH_COMPLETION ]; then
-    source $BASH_COMPLETION
-    source $MYBC/*
-fi
+#PREFIX=
+#BASH_COMPLETION=$PREFIX/etc/bash_completion
+#BASH_COMPLETION_DIR=$PREFIX/etc/bash_completion.d
+#BASH_COMPLETION_COMPAT_DIR=$PREFIX/etc/bash_completion.d
+#COMP_CONFIGURE_HINTS=1
+#MYBC=/home/pen/etc/bash_completion.d
+#if [ -f $BASH_COMPLETION ]; then
+#    source $BASH_COMPLETION
+#    source $MYBC/*
+#fi
 
