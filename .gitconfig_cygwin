@@ -14,7 +14,7 @@
     gdiff = difftool --tool=WinMerge
 [core]
 	editor = vim
-#	pager = lv -c
+	pager = less -c
 	filemode = true
     autocrlf = false
 [color]

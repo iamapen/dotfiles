@@ -21,7 +21,6 @@ highlight PmenuSbar ctermbg=4
 
 " TAB
 set tabstop=4
-set softtabstop=4
 set shiftwidth=4
 set expandtab			" tabでスペース挿入
 
