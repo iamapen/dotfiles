@@ -8,3 +8,4 @@ endif
 filetype plugin on
 
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'Shougo/vimproc'

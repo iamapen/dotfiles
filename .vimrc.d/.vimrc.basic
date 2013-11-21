@@ -23,9 +23,9 @@ set virtualedit=block
 let g:netrw_sort_sequence="[\\/]$,*,\\.\\(mv\\|old\\|cp\\|bak\\|orig\\)[0-9]*[\\/]$,\\.\\(mv\\|old\\|cp\\|bak\\|orig\\)[0-9]*$,\\.o$,\\.info$,\\.swp$,\\.obj$ "
 
 " mouse
-set mouse=a
-set guioptions+=a
-set ttymouse=xterm2
+"set mouse=a
+"set guioptions+=a
+"set ttymouse=xterm2
 
 " clipboard
 set clipboard+=unnamed          " OSのクリップボードを使用
