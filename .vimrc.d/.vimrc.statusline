@@ -1,0 +1,16 @@
+"===========
+" statusline
+"===========
+" statusline
+set laststatus=2
+set statusline=[%n]  "file no
+set statusline+=%m   "changed?
+set statusline+=%r   "read-only?
+set statusline+=%h   "help?
+set statusline+=%w   "preview?
+set statusline+=%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']['.&ft.']'}  "encode, linefeed, filetype
+set statusline+=%<%F  "filename
+set statusline+=%=    "separator
+set statusline+=%c/%{col('$')-1}:%l/%L  "列/全列:行/全行
+set statusline+=%8P     "全体から見た現在ページの位置
+

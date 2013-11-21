@@ -1,0 +1,28 @@
+"========
+" 表示系
+"========
+
+" 不可視文字
+set list
+set listchars=eol:$,tab:>\ ,extends:<
+set display=uhex
+
+set number
+set ruler
+
+" 全角スペース
+highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=white
+match ZenkakuSpace /　/
+
+" カーソル行強調
+"set cursorline
+"hi clear CursorLine
+"hi CursorLine term=reverse cterm=none
+"hi CursorLine ctermbg=232
+"" current windowのみ
+"augroup cch
+"    autocmd! cch
+"    autocmd WinLeave * set nocursorline
+"    autocmd WinEnter,BufRead * set cursorline
+"augroup END
+

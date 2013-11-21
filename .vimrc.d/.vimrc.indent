@@ -1,0 +1,15 @@
+"==============
+" indent関連
+"==============
+set autoindent
+set smartindent
+set cindent
+
+set tabstop=4
+set shiftwidth=4
+set softtabstop=0
+
+set smarttab " shiftwidth の数だけインデント
+
+filetype plugin on
+filetype indent on
