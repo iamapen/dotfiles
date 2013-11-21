@@ -4,7 +4,8 @@
 
 " 不可視文字
 set list
-set listchars=eol:$,tab:>\ ,extends:<
+"set listchars=eol:$,tab:>\ ,extends:<
+set listchars=tab:>\ ,extends:<
 set display=uhex
 
 set number
