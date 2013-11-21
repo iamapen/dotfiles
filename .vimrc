@@ -1,9 +1,10 @@
-source ~/.vimrc.d/.vimrc.apperance
-source ~/.vimrc.d/.vimrc.basic
-source ~/.vimrc.d/.vimrc.color
-source ~/.vimrc.d/.vimrc.dictionary
-source ~/.vimrc.d/.vimrc.edit
-source ~/.vimrc.d/.vimrc.encoding
-source ~/.vimrc.d/.vimrc.indent
-source ~/.vimrc.d/.vimrc.statusline
+source $HOME/.vimrc.d/.vimrc.apperance
+source $HOME/.vimrc.d/.vimrc.basic
+source $HOME/.vimrc.d/.vimrc.color
+source $HOME/.vimrc.d/.vimrc.dictionary
+source $HOME/.vimrc.d/.vimrc.edit
+source $HOME/.vimrc.d/.vimrc.encoding
+source $HOME/.vimrc.d/.vimrc.indent
+source $HOME/.vimrc.d/.vimrc.search
+source $HOME/.vimrc.d/.vimrc.statusline
 
