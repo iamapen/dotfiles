@@ -21,6 +21,12 @@ echo -e
 echo link "$HOME/.vimrc.d -> $BASE_DIR/.vimrc.d"
 ln -siT "$BASE_DIR/.vimrc.d" "$HOME/.vimrc.d"
 
+# .vim
+echo -e
+echo link "$HOME/.vim -> $BASE_DIR/.vim"
+ln -siT "$BASE_DIR/.vim" "$HOME/.vim"
+
+
 # bash-completion.d
 echo -e
 echo link "$HOME/etc/bash_completion.d -> $BASE_DIR/etc/bash_completion.d"
