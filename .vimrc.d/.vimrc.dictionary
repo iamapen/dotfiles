@@ -1,5 +1,0 @@
-"=========================
-" dictionary関連(C-x C-k)
-"=========================
-
-"autocmd FileType php :set dictionary=~/.vim/dict/php.dict
