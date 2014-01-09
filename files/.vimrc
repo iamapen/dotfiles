@@ -36,7 +36,6 @@ set statusline+=%<%F  "filename
 set statusline+=%=    "separator
 set statusline+=%c/%{col('$')-1}:%l/%L  "列/全列:行/全行
 set statusline+=%8P     "全体から見た現在ページの位置
-
 " }}}
 
 " apperance(表示系)
@@ -53,15 +52,12 @@ set ruler
 
 " カーソル行強調
 set cursorline
-"hi clear CursorLine
-"hi CursorLine term=reverse cterm=none
-"hi CursorLine ctermbg=232
-"" current windowのみ
-"augroup cch
-"    autocmd! cch
-"    autocmd WinLeave * set nocursorline
-"    autocmd WinEnter,BufRead * set cursorline
-"augroup END
+" current windowのみ
+augroup cch
+    autocmd! cch
+    autocmd WinLeave * set nocursorline
+    autocmd WinEnter,BufRead * set cursorline
+augroup END
 "}}}
 
 " basic(基本設定)
@@ -72,7 +68,7 @@ set backspace=indent
 set nocompatible
 "set hidden
 set formatoptions=lmoq
-set vb t_vb=                    " beep off
+set visualbell t_vb=                    " beep off
 set whichwrap=b,s,h,l,<,>,[,]   " カーソルを行頭，行末で止まらないように
 set showcmd
 set showmode
@@ -104,14 +100,7 @@ colorscheme iamapen
 " color(色関係)
 " {{{
 syntax enable
-"set background=dark
-"hi LineNr ctermfg=darkyellow
-"hi NonText ctermfg=darkgrey
-"hi Folded ctermfg=blue
-"hi SpecialKey cterm=underline ctermfg=darkgrey
-"hi DiffAdd cterm=bold ctermbg=green
-"hi StatusLine ctermbg=black ctermfg=white
-"hi ZenkakuSpace cterm=underline ctermfg=lightblue guibg=white
+set background=dark
 
 " 全角スペース
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=white
@@ -125,8 +114,6 @@ match ZenkakuSpace /　/
 
 " edit(編集関連)
 "{{{
-" tab
-
 "set foldmethod=marker
 set foldmethod=syntax       " foldingはfiletype別
 set foldlevelstart=99       " 全展開で開始
@@ -138,7 +125,6 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "norm
 
 " :Ptでインデントモード切替
 "command! Pt :set paste!
-
 set pastetoggle=<f5>
 
 " buffer移動
@@ -157,15 +143,19 @@ function! s:VSetSearch()
     let @s = temp
 endfunction
 
-" Esc-wでwrapトグル
-function WrapToggle()
-    if &wrap == '1'
-        set nowrap
+" wrapトグル
+nmap <silent> <f4> :set wrap!<CR>
+
+" 不可視文字表示切り替え
+function ListModeChange()
+    if &listchars == 'tab:> ,extends:<'
+        set listchars=eol:$,tab:>\ ,extends:<
     else
-        set wrap
+        set listchars=tab:>\ ,extends:<
     endif
+    echo &listchars
 endfunction
-nmap <Esc>w :call WrapToggle()<CR>
+nmap <silent> <f3> :call ListModeChange()<CR>
 
 " :Jqでjq
 command! -nargs=? Jq call s:Jq(<f-args>)
