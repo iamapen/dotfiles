@@ -1,33 +1,31 @@
 #!/bin/bash -e
 
 BASE_DIR=$(cd $(dirname $0);pwd)
+RESOURCE_DIR="$BASE_DIR/files"
 
-# dotfiles
-FILES=$(find . -mindepth 1 -maxdepth 1 -type f -exec basename {} \;)
-FILES=$(echo $FILES | sed -e "s/setup.sh \?//")
-FILES=$(echo $FILES | sed -e "s/setup_cygwin.sh \?//")
+CYGWIN=false
+case "$(uname)" in
+  CYGWIN*) CYGWIN=true;;
+esac
+
+FILES=$(find $RESOURCE_DIR -mindepth 1 -maxdepth 1 -exec basename {} \;)
 FILES=$(echo $FILES | sed -e "s/[a-zA-Z0-9._]\+_cygwin \?//g")
-FILES=$(echo $FILES | sed -e "s/[a-zA-Z0-9._]\+\.swp \?//g")
 
 for FILE in $FILES
 do
   echo -e
-  echo link "$HOME/$FILE -> $BASE_DIR/$FILE"
-  ln -siT "$BASE_DIR/$FILE" "$HOME/$FILE"
+  echo link "$HOME/$FILE -> $RESOURCE_DIR/$FILE"
+  ln -siT "$RESOURCE_DIR/$FILE" "$HOME/$FILE"
 done
 
-# vimrc.d
-echo -e
-echo link "$HOME/.vimrc.d -> $BASE_DIR/.vimrc.d"
-ln -siT "$BASE_DIR/.vimrc.d" "$HOME/.vimrc.d"
 
-# .vim
-echo -e
-echo link "$HOME/.vim -> $BASE_DIR/.vim"
-ln -siT "$BASE_DIR/.vim" "$HOME/.vim"
-
-
-# bash-completion.d
-echo -e
-echo link "$HOME/etc/bash_completion.d -> $BASE_DIR/etc/bash_completion.d"
-ln -siT "$BASE_DIR/etc/bash_completion.d" "$HOME/etc/bash_completion.d"
+if [ $CYGWIN = true ]; then
+FILES=$(find $RESOURCE_DIR -mindepth 1 -maxdepth 1 -type f -name *_cygwin -exec basename {} \;)
+for FILE in $FILES
+  do
+    LINKNAME=$(echo $FILE | sed -e "s/_cygwin$//")
+    echo -e
+    echo link "$HOME/$LINKNAME-> $RESOURCE_DIR/$FILE"
+    ln -siT "$RESOURCE_DIR/$FILE" "$HOME/$LINKNAME"
+  done
+fi
