@@ -18,7 +18,8 @@ let g:colors_name = "iamapen"
 hi Normal                    guifg=#FFFFFF guibg=#000000 ctermfg=white ctermbg=black
 hi Cursor                    guifg=#000000 guibg=#FFFFFF ctermfg=0 ctermbg=15
 hi CursorLine                guibg=#333435 ctermbg=235 cterm=NONE
-hi Search                    guibg=#5A647E ctermfg=NONE ctermbg=236 cterm=underline
+"hi Search                    guibg=#5A647E ctermfg=NONE ctermbg=130 cterm=underline
+hi Search                    guibg=#5A647E ctermfg=178 ctermbg=NONE cterm=reverse
 hi Visual                    guibg=#5A647E ctermbg=60
 hi LineNr                    guifg=#888888 ctermfg=242
 hi StatusLine                guibg=#414243 gui=NONE guifg=#E6E1DC
@@ -45,9 +46,9 @@ hi Directory                 guifg=#A5C261 gui=NONE
 " Popup Menu
 " ----------
 " normal item in popup
-hi Pmenu                     guifg=#F6F3E8 guibg=#444444 gui=NONE
+hi Pmenu                     guifg=#F6F3E8 guibg=#444444 gui=NONE ctermbg=8
 " selected item in popup
-hi PmenuSel                  guifg=#000000 guibg=#A5C261 gui=NONE
+hi PmenuSel                  guifg=#000000 guibg=#A5C261 gui=NONE ctermbg=1
 " scrollbar in popup
 hi PMenuSbar                 guibg=#5A647E gui=NONE
 " thumb of the scrollbar in the popup

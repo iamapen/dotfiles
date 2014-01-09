@@ -19,6 +19,8 @@ filetype plugin on
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'elzr/vim-json'
+
+"runtime macros/matchit.vim
 "}}}
 
 " statusline
@@ -48,9 +50,6 @@ set display=uhex
 set number
 set ruler
 
-" 全角スペース
-highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=white
-match ZenkakuSpace /　/
 
 " カーソル行強調
 set cursorline
@@ -94,32 +93,29 @@ set ttymouse=xterm2
 " clipboard
 set clipboard+=unnamed          " OSのクリップボードを使用
 "imap <C-p> <ESC>"*pa            " insert mode時、Ctrl+Pでペースト
-
-filetype plugin on
-" }}}
-
-" color(色関係)
-" {{{
-syntax enable
-set background=dark
-hi LineNr ctermfg=darkyellow
-hi NonText ctermfg=darkgrey
-hi Folded ctermfg=blue
-hi SpecialKey cterm=underline ctermfg=darkgrey
-hi DiffAdd cterm=bold ctermbg=green
-hi StatusLine ctermbg=black ctermfg=white
-hi ZenkakuSpace cterm=underline ctermfg=lightblue guibg=white
-
-" pulldown
-hi Pmenu ctermbg=4
-hi PmenuSel ctermbg=1
-hi PmenuSbar ctermbg=4
 " }}}
 
 " colorscheme
 " {{{
 set t_Co=256
 colorscheme iamapen
+" }}}
+
+" color(色関係)
+" {{{
+syntax enable
+"set background=dark
+"hi LineNr ctermfg=darkyellow
+"hi NonText ctermfg=darkgrey
+"hi Folded ctermfg=blue
+"hi SpecialKey cterm=underline ctermfg=darkgrey
+"hi DiffAdd cterm=bold ctermbg=green
+"hi StatusLine ctermbg=black ctermfg=white
+"hi ZenkakuSpace cterm=underline ctermfg=lightblue guibg=white
+
+" 全角スペース
+highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=white
+match ZenkakuSpace /　/
 " }}}
 
 " dictionary関連(C-x C-k)
@@ -135,12 +131,31 @@ colorscheme iamapen
 set foldmethod=syntax       " foldingはfiletype別
 set foldlevelstart=99       " 全展開で開始
 
+set history=100     " コマンド履歴
 
 " 前回終了したカーソル行に復帰
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
 
 " :Ptでインデントモード切替
-command! Pt :set paste!
+"command! Pt :set paste!
+
+set pastetoggle=<f5>
+
+" buffer移動
+nnoremap <silent> [b :bprev<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
+
+" 現在の選択範囲を検索
+xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
+xnoremap # :<C-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
+function! s:VSetSearch()
+    let temp = @s
+    norm! gv"sy
+    let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
+    let @s = temp
+endfunction
 
 " Esc-wでwrapトグル
 function WrapToggle()
@@ -200,8 +215,6 @@ set shiftwidth=4    " autoindent
 set softtabstop=0
 
 set smarttab " 行頭TABは shiftwidth の数だけインデント
-
-filetype plugin on
 filetype indent on
 " }}}
 
@@ -224,6 +237,8 @@ set incsearch     "incremental search
 set ignorecase
 set smartcase     "検索文字列に大文字が含まれている場合のみ区別する
 set hlsearch      "検索結果ハイライト
+set nowrapscan
+set infercase
 
 "検索結果のハイライトをESCで消す
 nmap <Esc><Esc> :nohlsearch<CR><Esc> 
@@ -250,3 +265,6 @@ endif
 "endif
 " }}}
 
+" TODO
+" Surround.vim
+" Abolish.vim  強力な置換コマンド

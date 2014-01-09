@@ -2,7 +2,7 @@ defutf8 on
 defencoding utf-8
 encoding utf8 utf8
 escape ^z^z
-defscrollback 10000
+defscrollback 5000
 
 hardstatus alwayslastline "%-w%10L>%{=b bw}%n %t%{-}%+w %=%H"
 
