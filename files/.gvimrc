@@ -18,7 +18,19 @@ if has('multi_byte_ime')
     highlight CursorIM guifg=NONE guibg=Purple
 endif
 
-
 " window size
 set lines=40
 set columns=120
+
+
+" clipboard
+set clipboard+=unnamed          " OSのクリップボードを使用
+"set clipboard+=autoselect       " 選択範囲を自動でコピー(CUI)
+set guioptions+=a               " 選択範囲を自動でコピー(GUI)
+
+" mouse
+set mouse=a
+set ttymouse=xterm2
+" 右クリックでOSのクリップボードをペースト
+nnoremap <RightMouse> "*p
+inoremap <RightMouse> <C-r><C-o>*

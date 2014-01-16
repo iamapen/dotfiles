@@ -86,17 +86,6 @@ set virtualedit=block
 
 " sort order for explorer
 let g:netrw_sort_sequence="[\\/]$,*,\\.\\(mv\\|old\\|cp\\|bak\\|orig\\)[0-9]*[\\/]$,\\.\\(mv\\|old\\|cp\\|bak\\|orig\\)[0-9]*$,\\.o$,\\.info$,\\.swp$,\\.obj$ "
-
-" mouse
-set mouse=a
-set ttymouse=xterm2
-nnoremap <RightMouse> "*p
-inoremap <RightMouse> <C-r><C-o>*
-
-" clipboard
-set clipboard+=unnamed          " OSのクリップボードを使用
-set clipboard+=autoselect       " 選択範囲を自動でコピー(CUI)
-set guioptions+=a               " 選択範囲を自動でコピー(GUI)
 " }}}
 
 " colorscheme
