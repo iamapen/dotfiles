@@ -90,10 +90,13 @@ let g:netrw_sort_sequence="[\\/]$,*,\\.\\(mv\\|old\\|cp\\|bak\\|orig\\)[0-9]*[\\
 " mouse
 set mouse=a
 set ttymouse=xterm2
+nnoremap <RightMouse> "*p
+inoremap <RightMouse> <C-r><C-o>*
 
 " clipboard
 set clipboard+=unnamed          " OSのクリップボードを使用
-"imap <C-p> <ESC>"*pa            " insert mode時、Ctrl+Pでペースト
+set clipboard+=autoselect       " 選択範囲を自動でコピー(CUI)
+set guioptions+=a               " 選択範囲を自動でコピー(GUI)
 " }}}
 
 " colorscheme
