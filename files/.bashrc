@@ -22,6 +22,6 @@ alias ll='ls -la --color=auto'
 alias la='ls -aF --color=auto'
 
 # bash-completion
-#source /home/pen/etc/bash_completion.d/*
-source /home/pen/etc/bash_completion.d/vagrant
-source /home/pen/etc/bash_completion.d/knife
+#source ~/etc/bash_completion.d/*
+#source ~/etc/bash_completion.d/vagrant
+#source ~pen/etc/bash_completion.d/knife
