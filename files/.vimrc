@@ -6,6 +6,11 @@ if v:version < 700
     finish
 endif
 
+" for windows
+if has('win32') || has('win64')
+    set runtimepath^=$HOME/.vim
+endif
+
 " NeoBundle
 "{{{
 set nocompatible
@@ -231,11 +236,18 @@ filetype indent on
 " plugin関連
 " {{{
 "-- quickrun
+"let g:quickrun_config = {
+"\    '_': {
+"\       'outputter/buffer/split': 'botright 8sp',
+"\       'hook/time/enable': 1,
+"\       'runner': 'vimproc',
+"\       'runner/vimproc/updatetime': 40,
+"\    },
+"\}
 let g:quickrun_config = {
 \    '_': {
 \       'outputter/buffer/split': 'botright 8sp',
 \       'hook/time/enable': 1,
-\       'runner': 'vimproc',
 \       'runner/vimproc/updatetime': 40,
 \    },
 \}
@@ -276,5 +288,7 @@ endif
 " }}}
 
 " TODO
-" Surround.vim
+" Surround.vim  囲みヘルパ
 " Abolish.vim  強力な置換コマンド
+" NERD_commenter.vim    簡単コメント
+" YankRing              ペースト履歴
