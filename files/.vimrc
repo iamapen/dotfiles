@@ -206,7 +206,7 @@ autocmd FileType qf nnoremap <buffer> <ESC> :ccl<CR>
 " {{{
 set enc=utf-8
 set fenc=utf8
-set fileencodings=utf-8,iso-2022-jp,cp932,euc-jp
+set fileencodings=utf-8,iso-2022-jp,cp932,euc-jp,ucs-bom
 set ffs=unix,dos
 " }}}
 
