@@ -12,6 +12,7 @@
     st = status
     di = diff
     gdiff = difftool --tool=WinMerge
+    gdi = difftool --tool=WinMerge
 [core]
     editor = vim
     pager = less -c

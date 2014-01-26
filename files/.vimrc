@@ -14,16 +14,42 @@ endif
 " NeoBundle
 "{{{
 set nocompatible
-filetype off
-if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim.git/
-    call neobundle#rc(expand('~/.vim/bundle'))
+let s:noplugin = 0
+if has('win32') || has('win64')
+    let s:bundle_root = $HOME . '/.vim/bundle'
+else
+    let s:bundle_root = '/home/' . $USER . '/.vim/bundle'
+endif
+let s:neobundle_root = s:bundle_root . '/neobundle.vim.git'
+if !isdirectory(s:neobundle_root . '/autoload') || v:version < 702
+    let s:noplugin = 1
+else
+    if has('vim_starting')
+        execute "set runtimepath+=" . s:neobundle_root
+    endif
+    call neobundle#rc(s:bundle_root)
+
+    " 自身を管理
+    NeoBundleFetch 'Shougo/neobundle.vim'
+
+    NeoBundle 'Shougo/vimproc', {
+        \ 'build': {
+        \   'windows': 'make -f make_mingw32.mak',
+        \   'cygwin':  'make -f make_cygwin.mak',
+        \   'mac':     'make -f make_mac.mak',
+        \   'unix':    'make -f make_unix.mak',
+        \ },
+    \}
+
+    NeoBundle 'thinca/vim-quickrun'
+    NeoBundle 'elzr/vim-json'
+
+    NeoBundleCheck
+
+    autocmd VimEnter * execute 'source' expand('<sfile>')
 endif
 filetype plugin on
-
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'elzr/vim-json'
+filetype indent on
 
 "runtime macros/matchit.vim
 "}}}
@@ -63,6 +89,9 @@ augroup cch
     autocmd WinLeave * set nocursorline
     autocmd WinEnter,BufRead * set cursorline
 augroup END
+
+" 80桁目にライン
+set colorcolumn=80
 "}}}
 
 " basic(基本設定)
@@ -164,7 +193,7 @@ endfunction
 nmap <silent> <f4> :set wrap!<CR>
 
 " 不可視文字表示切り替え
-function ListModeChange()
+function! ListModeChange()
     if &listchars == 'tab:> ,extends:<'
         set listchars=eol:$,tab:>\ ,extends:<
     else
@@ -228,18 +257,11 @@ filetype indent on
 " plugin関連
 " {{{
 "-- quickrun
-"let g:quickrun_config = {
-"\    '_': {
-"\       'outputter/buffer/split': 'botright 8sp',
-"\       'hook/time/enable': 1,
-"\       'runner': 'vimproc',
-"\       'runner/vimproc/updatetime': 40,
-"\    },
-"\}
 let g:quickrun_config = {
 \    '_': {
 \       'outputter/buffer/split': 'botright 8sp',
 \       'hook/time/enable': 1,
+\       'runner': 'vimproc',
 \       'runner/vimproc/updatetime': 40,
 \    },
 \}
@@ -274,6 +296,9 @@ endif
 "if has('win32') || has('win64')
 "    " Windowsの場合
 "endif
+"if has('win32unix') || has('win64unix')
+"    " Cygwinの場合
+"endif
 "if has('gui_running')
 "    " GUIの場合
 "endif
@@ -284,3 +309,5 @@ endif
 " Abolish.vim  強力な置換コマンド
 " NERD_commenter.vim    簡単コメント
 " YankRing              ペースト履歴
+" VImfiler              ファイラ
+" gitv                  git
