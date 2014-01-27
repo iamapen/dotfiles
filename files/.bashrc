@@ -26,6 +26,7 @@ alias la='ls -aF --color=auto'
 alias open='cygstart'
 
 export LC_MESSAGES=C
+export LC_TIME=C
 
 # bash-completion
 #source ~/etc/bash_completion.d/*
