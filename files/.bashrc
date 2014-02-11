@@ -29,6 +29,7 @@ export LC_MESSAGES=C
 export LC_TIME=C
 
 # bash-completion
+source /etc/bash_completion
 #source ~/etc/bash_completion.d/*
-#source ~/etc/bash_completion.d/vagrant
+source ~/etc/bash_completion.d/vagrant
 #source ~pen/etc/bash_completion.d/knife
