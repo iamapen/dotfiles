@@ -13,3 +13,4 @@ CursorType=block
 ClicksTargetApp=no
 CopyAsRTF=no
 BoldAsColour=no
+OpaqueWhenFocused=no
