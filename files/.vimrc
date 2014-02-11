@@ -90,8 +90,7 @@ augroup cch
     autocmd WinEnter,BufRead * set cursorline
 augroup END
 
-" 80桁目にライン
-set colorcolumn=80
+"set colorcolumn=80 " 80桁目にライン
 "}}}
 
 " basic(基本設定)
@@ -284,6 +283,7 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " お試し中
 set nrformats=  "すべての数値を10進扱い。加算/減算用。
+cmap w!!!! w !sudo tee > /dev/null %
 
 " 上書き
 if filereadable(expand('~/.vimrc.local'))
