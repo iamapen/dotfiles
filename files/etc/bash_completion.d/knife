@@ -1,0 +1,71 @@
+# -*- mode: bash -*-
+# vi: set ft=sh :
+
+# for chef-11.8.0 (chef-solo focus)
+
+
+__getBoxList() {
+  echo $(find $HOME/.vagrant.d/boxes -mindepth 1 -maxdepth 1 -type d -exec basename {} \;)
+}
+
+_knife() {
+  local opts curr prev
+  opts="configure solo cookbook help ssh" # TODO client,data,environment,exec,index,node,delete,deps,diff,download,edit,list,show,upload,xargs,raw,recipe,role,search,status,tag,user
+  curr="${COMP_WORDS[COMP_CWORD]}"
+  prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+  if [ $COMP_CWORD == 1 ]; then
+    COMPREPLY=($(compgen -W "${opts}" ${curr}))
+    return 0
+  fi
+
+  if [ $COMP_CWORD == 2 ]; then
+    local subopt
+    case "$prev" in
+      "solo")
+        subopt="bootstrap clean cook init prepare"
+        COMPREPLY=($(compgen -W "${subopt}" ${curr}))
+        return 0
+        ;;
+      "cookbook")
+        subopt="bulk create delete download list metadata show test upload"
+        COMPREPLY=($(compgen -W "${subopt}" ${curr}))
+        return 0
+        ;;
+      *)
+        _filedir
+        ;;
+    esac
+  fi
+
+  if [ $COMP_CWORD == 3 ]; then
+    local prevopt subopt
+    firstOpt="${COMP_WORDS[1]}"
+    case "$firstOpt" in
+      "solo")
+        case "$prev" in
+          "cook")
+            local node_list="$(find ./nodes -type f -name *.json -exec basename {} \; | xargs echo | sed -e 's/\([a-zA-Z0-9_.-]\+\)\.json/\1/g')"
+            COMPREPLY=($(compgen -W "${node_list}" ${curr}))
+            return 0
+            ;;
+          *)
+            _filedir
+            ;;
+        esac
+        ;;
+      *)
+        ;;
+    esac
+  fi
+
+#
+#  if [ $COMP_CWORD == 4 ]; then
+#  fi
+  
+  _filedir
+}
+
+complete -F _knife knife
+
+
