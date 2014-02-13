@@ -14,3 +14,4 @@ ClicksTargetApp=no
 CopyAsRTF=no
 BoldAsColour=no
 OpaqueWhenFocused=no
+CursorBlinks=no
