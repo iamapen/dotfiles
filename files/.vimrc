@@ -46,10 +46,10 @@ else
 
     NeoBundleCheck
 
-    autocmd VimEnter * execute 'source' expand('<sfile>')
+    "自動インストール..なのだがfiletypeがおかしくなるので止め
+    "autocmd VimEnter * execute 'source' expand('<sfile>')
 endif
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 "runtime macros/matchit.vim
 "}}}
@@ -250,7 +250,6 @@ set shiftwidth=4    " autoindent
 set softtabstop=0
 
 set smarttab " 行頭TABは shiftwidth の数だけインデント
-filetype indent on
 " }}}
 
 " plugin関連
