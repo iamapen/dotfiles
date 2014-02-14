@@ -1,7 +1,8 @@
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
 
-export PS1="[\[\033[40m\]\[\033[1;36m\]\t\[\033[0m\] \u@\h \W]$ "
+#export PS1="[\[\033[40m\]\[\033[1;36m\]\t\[\033[0m\] \u@\h \W]$ "
+export PS1="[\[\033[1;36m\]\t\[\033[0m\] \u@\h \W]$ "
 export SVN_EDITOR=vim
 export EDITOR=vim
 
@@ -32,4 +33,4 @@ export LC_TIME=C
 source /etc/bash_completion
 #source ~/etc/bash_completion.d/*
 source ~/etc/bash_completion.d/vagrant
-#source ~pen/etc/bash_completion.d/knife
+source ~pen/etc/bash_completion.d/knife
