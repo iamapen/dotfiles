@@ -33,4 +33,4 @@ export LC_TIME=C
 source /etc/bash_completion
 #source ~/etc/bash_completion.d/*
 source ~/etc/bash_completion.d/vagrant
-source ~pen/etc/bash_completion.d/knife
+#source ~pen/etc/bash_completion.d/knife
