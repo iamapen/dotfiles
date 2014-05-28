@@ -15,7 +15,7 @@
     gdi = difftool --tool=WinMerge
 [core]
     editor = vim
-    pager = less -r
+    pager = LESS=-R less
     filemode = true
     autocrlf = false
     excludesfile = ~/.gitignore
