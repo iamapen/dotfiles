@@ -10,7 +10,6 @@ umask 0022
 
 stty stop undef
 
-
 # User specific aliases and functions
 alias rm='rm -i'
 alias cp='cp -i'
@@ -23,14 +22,15 @@ alias ls='ls -F --color=auto'
 alias ll='ls -la --color=auto'
 alias la='ls -aF --color=auto'
 
-# alias for cygwin
-alias open='cygstart'
-
 export LC_MESSAGES=C
 export LC_TIME=C
 
 # bash-completion
 source /etc/bash_completion
 #source ~/etc/bash_completion.d/*
-source ~/etc/bash_completion.d/vagrant
-#source ~pen/etc/bash_completion.d/knife
+
+# for cygwin
+uname | grep -i cygwin > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+  source ~/.bashrc_cyg
+fi
