@@ -1,8 +1,16 @@
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
 
-#export PS1="[\[\033[40m\]\[\033[1;36m\]\t\[\033[0m\] \u@\h \W]$ "
-export PS1="[\[\033[1;36m\]\t\[\033[0m\] \u@\h \W]$ "
+#export PS1='[\[\033[40m\]\[\033[1;36m\]\t\[\033[0m\] \u@\h \W]$ '
+#export PS1='[\[\033[1;36m\]\t\[\033[0m\] \u@\h \W]$ '
+#export PS1='[\[\033[36m\]\t\[\033[00m\] \u@\h \W]$ '
+
+# Gitのブランチと変更数を表示。重い。
+#export PS1='[\[\033[36m\]\t\[\033[00m\] \u@\h \W]$ \[\033[32m\]$(if git status &>/dev/null;then echo git[$(git branch | cut -d" "  -f2-) change:$(git status -s |wc -l)];fi)\[\033[00m\] '
+
+# 失敗したら時計を紫に
+export PS1='\[\033[$(if [ "$?" != "0" ];then echo "35"; else echo "36"; fi)m\]\t\[\033[00m\] \u@\h \W $ '
+
 export SVN_EDITOR=vim
 export EDITOR=vim
 
