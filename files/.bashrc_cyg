@@ -2,9 +2,11 @@
 alias open='cygstart'
 
 # alias for cygwin-chef
-alias chef-solo='/cygdrive/g/apps/opscode/chef/embedded/bin/ruby G:/apps/opscode/chef/bin/chef-solo'
-alias knife='/cygdrive/g/apps/opscode/chef/embedded/bin/ruby G:/apps/opscode/chef/bin/knife'
-alias chef-client='/cygdrive/g/apps/opscode/chef/embedded/bin/ruby G:/apps/opscode/chef/bin/chef-client'
+CHEF_ROOT_CYG="/cygdrive/c/apps/opscode/chef"
+CHEF_ROOT_WIN="C:/apps/opscode/chef"
+alias chef-solo="${CHEF_ROOT_CYG}/embedded/bin/ruby ${CHEF_ROOT_WIN}/bin/chef-solo"
+alias knife="${CHEF_ROOT_CYG}/embedded/bin/ruby ${CHEF_ROOT_WIN}/bin/knife"
+alias chef-client="${CHEF_ROOT_CYG}/embedded/bin/ruby ${CHEF_ROOT_WIN}/bin/chef-client"
 
 # bash-completion
 source ~/etc/bash_completion.d/vagrant
