@@ -11,6 +11,7 @@
     stat = status
     st = status
     di = diff
+    sdi = diff --staged
     gdiff = difftool --tool=WinMerge
     gdi = difftool --tool=WinMerge
 [core]

@@ -11,6 +11,7 @@
     stat = status
     st = status
     di = diff
+    sdi = diff --staged
 [core]
     editor = vim
 #    pager = lv -c
