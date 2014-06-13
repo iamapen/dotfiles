@@ -29,6 +29,9 @@ alias less='less -r'                          # raw control characters
 alias ls='ls -F --color=auto'
 alias ll='ls -la --color=auto'
 alias la='ls -aF --color=auto'
+if [[ -x `which colordiff` ]]; then
+  alias diff='colordiff'
+fi
 
 export LC_MESSAGES=C
 export LC_TIME=C
