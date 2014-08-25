@@ -29,6 +29,11 @@ alias less='less -r'                          # raw control characters
 alias ls='ls -F --color=auto'
 alias ll='ls -la --color=auto'
 alias la='ls -aF --color=auto'
+alias minttyR='mintty -c ~/.minttyrcR'
+alias minttyB='mintty -c ~/.minttyrcB'
+alias minttyG='mintty -c ~/.minttyrcG'
+alias minttyY='mintty -c ~/.minttyrcY'
+alias minttyP='mintty -c ~/.minttyrcP'
 
 export LC_MESSAGES=C
 export LC_TIME=C
