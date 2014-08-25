@@ -34,6 +34,9 @@ alias minttyB='mintty -c ~/.minttyrcB'
 alias minttyG='mintty -c ~/.minttyrcG'
 alias minttyY='mintty -c ~/.minttyrcY'
 alias minttyP='mintty -c ~/.minttyrcP'
+if [[ -x `which colordiff` ]]; then
+  alias diff='colordiff'
+fi
 
 export LC_MESSAGES=C
 export LC_TIME=C
