@@ -1,1 +1,8 @@
 *.swp
+/.buildpath
+/.project
+/.settings/*
+/nbproject/*
+/.idea/*
+.~lock.*
+*.csv~
