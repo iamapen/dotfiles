@@ -56,6 +56,7 @@ fi
 
 # man
 export MANPAGER='less -R'
+export MANPATH=/usr/share/man/ja:$MANPATH
 man() {
   env \
     LESS_TERMCAP_mb=$(printf "\e[1;31m") \
