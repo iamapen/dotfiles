@@ -23,6 +23,6 @@ altscreen on
 attrcolor b ".I"
 
 vbell off
-wrap on
+defwrap on
 msgwait 5
 msgminwait 1
