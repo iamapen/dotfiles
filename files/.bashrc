@@ -49,6 +49,11 @@ export LC_TIME=C
 source /etc/bash_completion
 #source ~/etc/bash_completion.d/*
 
+# dircolors
+if type -P dircolors >/dev/null; then
+  eval `dircolors $HOME/.dir_colors`
+fi
+
 # for cygwin
 uname | grep -i cygwin > /dev/null 2>&1
 if [ $? -eq 0 ]; then
