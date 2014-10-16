@@ -6,3 +6,4 @@
 /.idea/*
 .~lock.*
 *.csv~
+*.bak

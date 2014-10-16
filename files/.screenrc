@@ -18,3 +18,11 @@ termcapinfo xterm* 'Co#256:pa#32767:AB=\E[48;5;%dm:AF=\E[38;5;%dm:'
 termcapinfo xterm* 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
 
 altscreen on
+
+# 太字は明るく
+attrcolor b ".I"
+
+vbell off
+wrap on
+msgwait 5
+msgminwait 1

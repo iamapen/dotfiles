@@ -96,7 +96,7 @@ augroup END
 " basic(基本設定)
 " {{{
 set nobackup
-set nowrap
+"set nowrap
 set backspace=indent
 set nocompatible
 "set hidden
