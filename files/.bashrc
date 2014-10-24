@@ -77,3 +77,8 @@ fi
 
 # Ctrl+D を1回無視。オペミスによるログアウト防止のため。
 export IGNOREEOF=1
+
+# ヒストリ
+export HISTSIZE=500
+# 重複コマンド、先頭がスペースのコマンドは残さない
+export HISTCONTROL=ignoreboth
