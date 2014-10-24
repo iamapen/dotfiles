@@ -74,3 +74,6 @@ uname | grep -i cygwin > /dev/null 2>&1
 if [ $? -eq 0 ]; then
   source ~/.bashrc_cyg
 fi
+
+# Ctrl+D を1回無視。オペミスによるログアウト防止のため。
+export IGNOREEOF=1
