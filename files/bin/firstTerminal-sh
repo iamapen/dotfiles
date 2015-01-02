@@ -1,0 +1,10 @@
+#!/bin/bash
+
+KEYCHAIN_BIN=/usr/bin/keychain
+SSH_ADD_BIN=/usr/bin/ssh-add
+
+$KEYCHAIN_BIN
+source ~/.keychain/${HOSTNAME}-sh
+
+# add keys
+$SSH_ADD_BIN ~/.ssh/id_rsa
