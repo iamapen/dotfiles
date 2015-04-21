@@ -152,6 +152,11 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "norm
 "command! Pt :set paste!
 set pastetoggle=<f5>
 
+" カーソルを表示行で移動する。物理行移動は<C-n>, <C-p>
+nnoremap j gj
+nnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up> gk
 " buffer移動
 nnoremap <silent> [b :bprev<CR>
 nnoremap <silent> ]b :bnext<CR>
