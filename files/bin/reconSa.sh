@@ -10,11 +10,11 @@
 
 # 環境変数がなければ何もしない
 if [ -e $SSH_AUTH_SOCK ]; then
-  exit 0
+  echo "No environment var SSH_AUTH_SOCK"
+else
+  # 自分の作成したsocketを確認(転送されたagent)
+  KNOWN_SOCK=`find /tmp/ssh-* -maxdepth 1 -mindepth 1 -type s -user $USER | head -n1`
+
+  # 見つかった最初のsocketを再設定
+  export SSH_AUTH_SOCK=$KNOWN_SOCK
 fi
-
-# 自分の作成したsocketを確認(転送されたagent)
-KNOWN_SOCK=`find /tmp/ssh-* -maxdepth 1 -mindepth 1 -type s -user $USER | head -n1`
-
-# 見つかった最初のsocketを再設定
-export SSH_AUTH_SOCK=$KNOWN_SOCK
