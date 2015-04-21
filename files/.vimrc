@@ -196,7 +196,7 @@ endfunction
 " wrapトグル
 nmap <silent> <f4> :set wrap!<CR>
 
-" 不可視文字表示切り替え
+" <F3>で不可視文字表示切り替え
 function! ListModeChange()
     if &listchars == 'tab:> ,extends:<'
         set listchars=eol:$,tab:>\ ,extends:<
