@@ -4,8 +4,29 @@ if [ -f "${HOME}/.bashrc" ] ; then
   source "${HOME}/.bashrc"
 fi
 
+if [ -d "${HOME}/.bash.d" ] ; then
+    for f in "${HOME}"/.bash.d/*.sh ; do
+        [ -x "$f" ] && . "$f"
+    done
+    unset f
+fi
 
-PATH=${HOME}/bin:$PATH
+# ENV
+export LC_MESSAGES=C
+export LC_TIME=C
+export MANPAGER='less -R'
+export MANPATH=/usr/share/man/ja:$MANPATH
+export SVN_EDITOR=vim
+export EDITOR=vim
+
+# Ctrl+D を1回無視。オペミスによるログアウト防止のため。
+export IGNOREEOF=1
+
+# ヒストリ
+export HISTSIZE=500
+# 重複コマンド、先頭がスペースのコマンドは残さない
+export HISTCONTROL=ignoreboth
+
 
 ## proxy ##
 #USERNAME=

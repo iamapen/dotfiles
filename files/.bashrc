@@ -15,8 +15,6 @@ export PS1='[\[\033[$(if [ "$?" != "0" ];then echo "35"; else echo "36"; fi)m\]\
 #export PS1='[\t \u@\h \W]$ '
 
 
-export SVN_EDITOR=vim
-export EDITOR=vim
 
 umask 0022
 
@@ -44,8 +42,6 @@ if [[ -x `which colordiff` ]]; then
   alias diff='colordiff'
 fi
 
-export LC_MESSAGES=C
-export LC_TIME=C
 
 # bash-completion
 source /etc/bash_completion
@@ -57,8 +53,6 @@ if type -P dircolors >/dev/null; then
 fi
 
 # man
-export MANPAGER='less -R'
-export MANPATH=/usr/share/man/ja:$MANPATH
 man() {
   env \
     LESS_TERMCAP_mb=$(printf "\e[1;31m") \
@@ -77,10 +71,3 @@ if [ $? -eq 0 ]; then
   source ~/.bashrc_cyg
 fi
 
-# Ctrl+D を1回無視。オペミスによるログアウト防止のため。
-export IGNOREEOF=1
-
-# ヒストリ
-export HISTSIZE=500
-# 重複コマンド、先頭がスペースのコマンドは残さない
-export HISTCONTROL=ignoreboth
