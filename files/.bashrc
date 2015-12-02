@@ -28,7 +28,7 @@ alias grep='grep --color'                     # show differences in colour
 alias egrep='egrep --color=auto'              # show differences in colour
 alias fgrep='fgrep --color=auto'              # show differences in colour
 #alias less='less -r'                         # raw control characters
-alias less='less -M -R'                       # raw control characters
+#alias less='less -M -R'                      # raw control characters
 alias lv='lv -c'                              # raw control characters
 alias ls='ls -F --color=auto'
 alias ll='ls -la --color=auto'

@@ -29,6 +29,13 @@ export HISTCONTROL=ignoreboth
 # 日付も残す
 HISTTIMEFORMAT='%Y-%m-%d %T '
 
+# LESS
+export LESS='-M -R'
+#export LESS='-M -R --quit-if-one-screen'
+if [[ -x `which src-hilite-lesspipe.sh` ]]; then
+  LESSOPEN='| src-hilite-lesspipe.sh %s'
+fi
+
 
 ## proxy ##
 #USERNAME=
