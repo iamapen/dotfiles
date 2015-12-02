@@ -27,7 +27,7 @@ export HISTSIZE=500
 # 重複コマンド、先頭がスペースのコマンドは残さない
 export HISTCONTROL=ignoreboth
 # 日付も残す
-export HISTTIMEFORMAT='%Y-%m-%d %T '
+HISTTIMEFORMAT='%Y-%m-%d %T '
 
 
 ## proxy ##
