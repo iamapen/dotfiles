@@ -33,6 +33,7 @@ alias lv='lv -c'                              # raw control characters
 alias ls='ls -F --color=auto'
 alias ll='ls -la --color=auto'
 alias la='ls -aF --color=auto'
+alias crontab='crontab -i'
 alias minttyR='mintty -c ~/.minttyrcR'
 alias minttyB='mintty -c ~/.minttyrcB'
 alias minttyG='mintty -c ~/.minttyrcG'
