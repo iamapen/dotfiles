@@ -235,6 +235,9 @@ autocmd FileType qf nnoremap <buffer> <ESC> :ccl<CR>
 "nnoremap <silent> cw :call <SID>toggle_qf_window()<CR>
 "}}}
 
+" コメント行を引き継がない
+autocmd FileType * setlocal formatoptions-=ro
+
 " encoding関連
 " {{{
 set enc=utf-8
