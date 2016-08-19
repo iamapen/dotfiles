@@ -21,6 +21,7 @@ umask 0022
 stty stop undef
 
 # User specific aliases and functions
+alias sudo='sudo -E '
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
