@@ -14,7 +14,7 @@ fi
 # ENV
 export LC_MESSAGES=C
 export LC_TIME=C
-export MANPAGER='less -R'
+export MANPAGER='less -RMi'
 export MANPATH=/usr/share/man/ja:$MANPATH
 export SVN_EDITOR=vim
 export EDITOR=vim
@@ -30,7 +30,7 @@ export HISTCONTROL=ignoreboth
 HISTTIMEFORMAT='%Y-%m-%d %T '
 
 # LESS
-export LESS='-M -R'
+export LESS='-RMi'
 #export LESS='-M -R --quit-if-one-screen'
 if [[ -x `which src-hilite-lesspipe.sh` ]]; then
   LESSOPEN='| src-hilite-lesspipe.sh %s'
