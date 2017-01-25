@@ -4,6 +4,8 @@
 /.settings/*
 /nbproject/*
 /.idea/*
+/*.iml
 .~lock.*
 *.csv~
 *.bak
+

@@ -26,3 +26,6 @@ vbell off
 defwrap on
 msgwait 5
 msgminwait 1
+
+defmonitor on
+activity "window % updated"

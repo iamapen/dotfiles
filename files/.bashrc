@@ -15,26 +15,27 @@ export PS1='[\[\033[$(if [ "$?" != "0" ];then echo "35"; else echo "36"; fi)m\]\
 #export PS1='[\t \u@\h \W]$ '
 
 
-export SVN_EDITOR=vim
-export EDITOR=vim
 
 umask 0022
 
 stty stop undef
 
 # User specific aliases and functions
+alias sudo='sudo -E '
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias grep='grep --color'                     # show differences in colour
 alias egrep='egrep --color=auto'              # show differences in colour
 alias fgrep='fgrep --color=auto'              # show differences in colour
-#alias less='less -r'                          # raw control characters
-alias less='less -R'                          # raw control characters
-alias lv='lv -c'                            # raw control characters
+#alias less='less -r'                         # raw control characters
+#alias less='less -M -R'                      # raw control characters
+#alias less='less -MRSi'                      # raw control characters
+alias lv='lv -c'                              # raw control characters
 alias ls='ls -F --color=auto'
 alias ll='ls -la --color=auto'
 alias la='ls -aF --color=auto'
+alias crontab='crontab -i'
 alias minttyR='mintty -c ~/.minttyrcR'
 alias minttyB='mintty -c ~/.minttyrcB'
 alias minttyG='mintty -c ~/.minttyrcG'
@@ -44,8 +45,6 @@ if [[ -x `which colordiff` ]]; then
   alias diff='colordiff'
 fi
 
-export LC_MESSAGES=C
-export LC_TIME=C
 
 # bash-completion
 source /etc/bash_completion
@@ -57,8 +56,6 @@ if type -P dircolors >/dev/null; then
 fi
 
 # man
-export MANPAGER='less -R'
-export MANPATH=/usr/share/man/ja:$MANPATH
 man() {
   env \
     LESS_TERMCAP_mb=$(printf "\e[1;31m") \
@@ -88,3 +85,4 @@ export HISTCONTROL=ignoreboth
 
 # php
 export COMPOSER_HOME=~/.composer
+
