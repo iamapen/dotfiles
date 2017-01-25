@@ -84,3 +84,7 @@ export IGNOREEOF=1
 export HISTSIZE=500
 # 重複コマンド、先頭がスペースのコマンドは残さない
 export HISTCONTROL=ignoreboth
+
+
+# php
+export COMPOSER_HOME=~/.composer
