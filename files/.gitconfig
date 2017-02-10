@@ -19,6 +19,7 @@
     filemode = true
     autocrlf = false
     excludesfile = ~/.gitignore
+    quotepath = false
 [color]
     ui = auto
 [color "status"]
