@@ -7,4 +7,4 @@ $KEYCHAIN_BIN
 source ~/.keychain/${HOSTNAME}-sh
 
 # add keys
-$SSH_ADD_BIN ~/.ssh/id_rsa
+$SSH_ADD_BIN ~/.ssh/*.id_rsa
