@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYCHAIN_BIN=/usr/bin/keychain
+KEYCHAIN_BIN=keychain
 SSH_ADD_BIN=/usr/bin/ssh-add
 
 $KEYCHAIN_BIN
