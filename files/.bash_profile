@@ -6,7 +6,7 @@ fi
 
 if [ -d "${HOME}/.bash.d" ] ; then
     for f in "${HOME}"/.bash.d/*.sh ; do
-        [ -x "$f" ] && . "$f"
+        [ -x "$f" ] && source "$f"
     done
     unset f
 fi
@@ -30,7 +30,7 @@ export HISTCONTROL=ignoreboth
 HISTTIMEFORMAT='%Y-%m-%d %T '
 
 # LESS
-export LESS='-RMi'
+export LESS='-RMi --no-init'
 #export LESS='-M -R --quit-if-one-screen'
 if [[ -x `which src-hilite-lesspipe.sh` ]]; then
   LESSOPEN='| ~/bin/src-hilite-lesspipe.sh %s'

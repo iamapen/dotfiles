@@ -9,17 +9,20 @@
     stat = status
     st = status
     di = diff
-    sdi = diff --staged
     diw = diff --word-diff
-    diffs = diff --name-only
+    diq = diff --name-only
+    sdi = diff --staged
+    sdiw = diff --staged --word-diff
+    sdiq = diff --staged --name-only
 [core]
     editor = vim
 #    pager = lv -c
-    pager = LESS=-R less
+    pager = LESS=-R less --no-init
     filemode = true
     autocrlf = false
     excludesfile = ~/.gitignore
     quotepath = false
+    ignorecase = false
 [color]
     ui = auto
 [color "status"]
