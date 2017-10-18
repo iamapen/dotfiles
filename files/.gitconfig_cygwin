@@ -2,16 +2,16 @@
     name = pen
     email = iamapen@studiopoppy.com
 [alias]
-    show-graph = log --graph --abbrev-commit --pretty=oneline
-    graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
-    diff = diff --word-diff
-    diffs = diff --name-only
+    graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %C(cyan)%cn %C(yellow)%d %Creset%s'
+    sgraph = log --graph --abbrev-commit --pretty=oneline
     vimdiff = difftool --tool=vimdiff --no-prompt
     co = checkout
     stat = status
     st = status
     di = diff
     sdi = diff --staged
+    diw = diff --word-diff
+    diffs = diff --name-only
     gdiff = difftool --tool=WinMerge
     gdi = difftool --tool=WinMerge
 [core]
@@ -20,8 +20,18 @@
     filemode = true
     autocrlf = false
     excludesfile = ~/.gitignore
+    quotepath = false
 [color]
     ui = auto
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = magenta
+#[color "decorate"]
+#    branch = magenta
+#    remoteBranch = magenta
+#    tag = magenta
+#    stash = magenta
 
 [diff]
     guitool = WinMerge
