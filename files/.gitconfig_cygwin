@@ -9,18 +9,26 @@
     stat = status
     st = status
     di = diff
-    sdi = diff --staged
     diw = diff --word-diff
-    diffs = diff --name-only
+    diq = diff --name-only
+    sdi = diff --staged
+    sdiw = diff --staged --word-diff
+    sdiq = diff --staged --name-only
     gdiff = difftool --tool=WinMerge
     gdi = difftool --tool=WinMerge
 [core]
     editor = vim
-    pager = LESS=-R less
+    pager = LESS=-R less --no-init
     filemode = true
     autocrlf = false
     excludesfile = ~/.gitignore
     quotepath = false
+    ignorecase = false
+[merge]
+    ff = false
+    tool = WinMerge
+[pull]
+    ff = only
 [color]
     ui = auto
 [color "status"]
@@ -41,9 +49,6 @@
     path = C:/apps/WinMerge/WinMergeU.exe
     cmd = \"C:/apps/WinMerge/WinMergeU.exe\" -e -x -ub -wl -dl \"Base\" -dr \"Mine\" \"C:/cygwin$LOCAL\" \"$REMOTE\"
 
-[merge]
-    tool = WinMerge
 [mergetool "WinMerge"]
     path = C:/apps/WinMerge/WinMergeU.exe
     cmd = \"C:/apps/WinMerge/WinMergeU.exe\" /m /r=\"MERGED\" \"C:/cygwin$LOCAL\" \"BASE\" \"$REMOTE\"
-

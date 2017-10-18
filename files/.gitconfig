@@ -23,6 +23,10 @@
     excludesfile = ~/.gitignore
     quotepath = false
     ignorecase = false
+[merge]
+    ff = false
+[pull]
+    ff = only
 [color]
     ui = auto
 [color "status"]
