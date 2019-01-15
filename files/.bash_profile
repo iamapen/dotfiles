@@ -31,6 +31,7 @@ HISTTIMEFORMAT='%Y-%m-%d %T '
 
 # LESS
 export LESS='-RMi --no-init'
+export LESSCHARSET=utf-8
 #export LESS='-M -R --quit-if-one-screen'
 if [[ -x `which src-hilite-lesspipe.sh` ]]; then
   LESSOPEN='| ~/bin/src-hilite-lesspipe.sh %s'
