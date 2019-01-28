@@ -3,9 +3,9 @@
 /.project
 /.settings/*
 /nbproject/*
-/.idea/*
-/*.iml
 .~lock.*
 *.csv~
 *.bak
 
+/.idea/workspace.xml
+/.idea/tasks.xml
