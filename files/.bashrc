@@ -44,6 +44,12 @@ alias minttyP='mintty -c ~/.minttyrcP'
 if [[ -x `which colordiff` ]]; then
   alias diff='colordiff'
 fi
+if [ -d "${HOME}/etc/opt_aliases" ] ; then
+    for f in "${HOME}"/etc/opt_aliases/*_sh ; do
+        [ -x "$f" ] && source "$f"
+    done
+    unset f
+fi
 
 
 # bash-completion
