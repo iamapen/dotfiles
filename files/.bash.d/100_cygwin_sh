@@ -1,4 +1,7 @@
-# alias for cygwin
+#
+# for cygwin
+# vim: set ft=sh :
+#
 alias open='cygstart'
 
 # alias for cygwin-chef

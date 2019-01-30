@@ -1,0 +1,9 @@
+#
+# for MSYS2
+# vim: set ft=sh :
+#
+alias minttyR='mintty -c ~/.minttyrcR'
+alias minttyB='mintty -c ~/.minttyrcB'
+alias minttyG='mintty -c ~/.minttyrcG'
+alias minttyY='mintty -c ~/.minttyrcY'
+alias minttyP='mintty -c ~/.minttyrcP'

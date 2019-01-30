@@ -1,3 +1,7 @@
+#
+# for WSL
+# vim: set ft=sh :
+#
 alias docker="docker.exe"
 alias docker-compose="docker-compose.exe"
 
@@ -5,4 +9,3 @@ alias ssh="ssh.exe"
 alias ssh-add="ssh-add.exe"
 alias scp="scp.exe"
 alias sftp="sftp.exe"
-

@@ -36,11 +36,6 @@ alias ls='ls -F --color=auto'
 alias ll='ls -la --color=auto'
 alias la='ls -aF --color=auto'
 alias crontab='crontab -i'
-alias minttyR='mintty -c ~/.minttyrcR'
-alias minttyB='mintty -c ~/.minttyrcB'
-alias minttyG='mintty -c ~/.minttyrcG'
-alias minttyY='mintty -c ~/.minttyrcY'
-alias minttyP='mintty -c ~/.minttyrcP'
 if [[ -x `which colordiff` ]]; then
   alias diff='colordiff'
 fi
@@ -75,12 +70,6 @@ man() {
     LESS_TERMCAP_us=$(printf "\e[1;32m") \
     man "$@"
 }
-
-# for cygwin
-uname | grep -i cygwin > /dev/null 2>&1
-if [ $? -eq 0 ]; then
-  source ~/.bashrc_cyg
-fi
 
 # Ctrl+D を1回無視。オペミスによるログアウト防止のため。
 export IGNOREEOF=1
