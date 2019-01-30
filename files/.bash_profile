@@ -4,12 +4,6 @@ if [ -f "${HOME}/.bashrc" ] ; then
   source "${HOME}/.bashrc"
 fi
 
-if [ -d "${HOME}/.bash.d" ] ; then
-    for f in "${HOME}"/.bash.d/*.sh ; do
-        [ -x "$f" ] && source "$f"
-    done
-    unset f
-fi
 
 # ENV
 export LC_MESSAGES=C

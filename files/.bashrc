@@ -39,12 +39,6 @@ alias crontab='crontab -i'
 if [[ -x `which colordiff` ]]; then
   alias diff='colordiff'
 fi
-if [ -d "${HOME}/etc/opt_aliases" ] ; then
-    for f in "${HOME}"/etc/opt_aliases/*_sh ; do
-        [ -x "$f" ] && source "$f"
-    done
-    unset f
-fi
 
 
 # bash-completion
@@ -85,3 +79,10 @@ export GIT_SSH=/usr/bin/ssh
 # php
 export COMPOSER_HOME=~/.composer
 
+
+if [ -d "${HOME}/.bash.d" ] ; then
+    for f in "${HOME}"/.bash.d/*_sh ; do
+        [ -x "$f" ] && source "$f"
+    done
+    unset f
+fi
