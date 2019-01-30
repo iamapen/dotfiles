@@ -90,6 +90,8 @@ export HISTSIZE=500
 # 重複コマンド、先頭がスペースのコマンドは残さない
 export HISTCONTROL=ignoreboth
 
+# git
+export GIT_SSH=/usr/bin/ssh
 
 # php
 export COMPOSER_HOME=~/.composer

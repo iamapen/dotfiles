@@ -9,5 +9,6 @@ source ~/.keychain/${HOSTNAME}-sh
 # add keys
 $SSH_ADD_BIN ~/.ssh/*.id_rsa
 
-which setx.exe && setx.exe SSH_AUTH_SOCK "$SSH_AUTH_SOCK" && setx.exe SSH_AGENT_PID "$SSH_AGENT_PID"
+# これらがあると WSL で OpenSSH for Windows が動かないので廃止
+#which setx.exe && setx.exe SSH_AUTH_SOCK "$SSH_AUTH_SOCK" && setx.exe SSH_AGENT_PID "$SSH_AGENT_PID"
 
