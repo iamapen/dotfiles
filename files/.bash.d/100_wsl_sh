@@ -2,6 +2,8 @@
 # for WSL
 # vim: set ft=sh :
 #
+export GIT_SSH=/mnt/c/Windows/System32/OpenSSH/ssh.exe
+
 alias docker="docker.exe"
 alias docker-compose="docker-compose.exe"
 
