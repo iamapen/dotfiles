@@ -36,7 +36,7 @@ alias ls='ls -F --color=auto'
 alias ll='ls -la --color=auto'
 alias la='ls -aF --color=auto'
 alias crontab='crontab -i'
-if [[ -x `which colordiff` ]]; then
+if [[ -x `which colordiff 2>/dev/null` ]]; then
   alias diff='colordiff'
 fi
 
@@ -81,8 +81,8 @@ export COMPOSER_HOME=~/.composer
 
 
 if [ -d "${HOME}/.bash.d" ] ; then
-    for f in "${HOME}"/.bash.d/*_sh ; do
-        [ -x "$f" ] && source "$f"
+    for f in "${HOME}"/.bash.d/*-sh ; do
+      source "$f"
     done
     unset f
 fi

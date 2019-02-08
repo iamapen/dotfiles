@@ -4,6 +4,8 @@
 #
 export PS1='[\[\e[\033[$(if [ "$?" != "0" ];then echo "35"; else echo "36"; fi)m\]\t\[\e[\033[00m\] \u@\[\e[1;96m\]wsl\[\e[0m\] \W]$ '
 
+alias wsltty="/mnt/c/Users/pen/AppData/Local/wsltty/bin/mintty.exe \
+  --WSL= --configdir=\"C:/Users/${USER}/AppData/Roaming/wsltty\""
 
 
 alias docker="docker.exe"

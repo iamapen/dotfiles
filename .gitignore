@@ -1,2 +1,5 @@
+files/.bash.d
+!files/.bash.d/*.template
+
 files/.vim/.netrwhist
 files/.vim/bundle/
