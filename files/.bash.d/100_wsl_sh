@@ -2,14 +2,16 @@
 # for WSL
 # vim: set ft=sh :
 #
-export PS1='[\[\033[$(if [ "$?" != "0" ];then echo "35"; else echo "36"; fi)m\]\t\[\033[00m\] \u@wsl \W]$ '
+export PS1='[\[\e[\033[$(if [ "$?" != "0" ];then echo "35"; else echo "36"; fi)m\]\t\[\e[\033[00m\] \u@\[\e[1;96m\]wsl\[\e[0m\] \W]$ '
 
-export GIT_SSH=/mnt/c/Windows/System32/OpenSSH/ssh.exe
+
 
 alias docker="docker.exe"
 alias docker-compose="docker-compose.exe"
 
-alias ssh="ssh.exe"
-alias ssh-add="ssh-add.exe"
-alias scp="scp.exe"
-alias sftp="sftp.exe"
+# OpenSSH for Windows
+#export GIT_SSH=/mnt/c/Windows/System32/OpenSSH/ssh.exe
+#alias ssh="ssh.exe"
+#alias ssh-add="ssh-add.exe"
+#alias scp="scp.exe"
+#alias sftp="sftp.exe"
