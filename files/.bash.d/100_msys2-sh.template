@@ -2,8 +2,8 @@
 # for MSYS2
 # vim: set ft=sh :
 #
-alias minttyR='mintty -c ~/.minttyrcR'
-alias minttyB='mintty -c ~/.minttyrcB'
-alias minttyG='mintty -c ~/.minttyrcG'
-alias minttyY='mintty -c ~/.minttyrcY'
-alias minttyP='mintty -c ~/.minttyrcP'
+alias minttyR='mintty -c ~/etc/mintty/red'
+alias minttyB='mintty -c ~/etc/mintty/blue'
+alias minttyG='mintty -c ~/etc/mintty/green'
+alias minttyY='mintty -c ~/etc/mintty/yellow'
+alias minttyP='mintty -c ~/etc/mintty/pink'
