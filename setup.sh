@@ -8,6 +8,9 @@ case "$(uname)" in
   CYGWIN*) CYGWIN=true;;
 esac
 
+BACKUP_DIR="/home/$USER/rc.bak.$(date +'%Y%m%d%H%M%S')"
+mkdir "$BACKUP_DIR"
+
 FILES=$(find $RESOURCE_DIR -mindepth 1 -maxdepth 1 -exec basename {} \;)
 FILES=$(echo $FILES | sed -e "s/[a-zA-Z0-9._]\+_cygwin \?//g")
 
@@ -15,7 +18,8 @@ for FILE in $FILES
 do
   echo -e
   echo link "$HOME/$FILE -> $RESOURCE_DIR/$FILE"
-  ln -siT "$RESOURCE_DIR/$FILE" "$HOME/$FILE"
+  mv -f "$HOME/$FILE" "$BACKUP_DIR" 2>/dev/null
+  ln -snf "$RESOURCE_DIR/$FILE" "$HOME/$FILE"
 done
 
 
@@ -26,6 +30,14 @@ for FILE in $FILES
     LINKNAME=$(echo $FILE | sed -e "s/_cygwin$//")
     echo -e
     echo link "$HOME/$LINKNAME-> $RESOURCE_DIR/$FILE"
-    ln -siT "$RESOURCE_DIR/$FILE" "$HOME/$LINKNAME"
+    ln -snf "$RESOURCE_DIR/$FILE" "$HOME/$LINKNAME"
   done
 fi
+
+
+echo  git submodule...
+git submodule init
+git submodule update
+
+
+echo done.
