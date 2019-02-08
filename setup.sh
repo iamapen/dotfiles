@@ -1,7 +1,8 @@
 #!/bin/bash
-
 BASE_DIR=$(cd $(dirname $0);pwd)
 RESOURCE_DIR="$BASE_DIR/files"
+
+cd $BASE_DIR
 
 CYGWIN=false
 case "$(uname)" in
