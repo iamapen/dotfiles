@@ -81,7 +81,7 @@ export COMPOSER_HOME=~/.composer
 
 
 if [ -d "${HOME}/.bash.d" ] ; then
-    for f in "${HOME}"/.bash.d/*-sh ; do
+    for f in `find ${HOME}/.bash.d/ -type f -name *-sh` ; do
       source "$f"
     done
     unset f
