@@ -10,6 +10,7 @@ alias wsltty="/mnt/c/Users/pen/AppData/Local/wsltty/bin/mintty.exe \
 
 alias docker="docker.exe"
 alias docker-compose="docker-compose.exe"
+alias docker-machine="docker-machine.exe"
 
 # OpenSSH for Windows
 #export GIT_SSH=/mnt/c/Windows/System32/OpenSSH/ssh.exe

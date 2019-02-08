@@ -7,3 +7,7 @@ alias minttyB='mintty -c ~/etc/mintty/blue'
 alias minttyG='mintty -c ~/etc/mintty/green'
 alias minttyY='mintty -c ~/etc/mintty/yellow'
 alias minttyP='mintty -c ~/etc/mintty/pink'
+
+alias docker="/c/Program\ Files/Docker/Docker/resources/bin/docker.exe"
+alias docker-compose="/c/Program\ Files/Docker/Docker/resources/bin/docker-compose.exe"
+alias docker-machine="/c/Program\ Files/Docker/Docker/resources/bin/docker-machine.exe"
