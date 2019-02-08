@@ -9,7 +9,7 @@
 #export PS1='[\[\033[36m\]\t\[\033[00m\] \u@\h \W]$ \[\033[32m\]$(if git status &>/dev/null;then echo git[$(git branch | cut -d" "  -f2-) change:$(git status -s |wc -l)];fi)\[\033[00m\] '
 
 # 失敗したら時計を紫に
-export PS1='[\[\033[$(if [ "$?" != "0" ];then echo "35"; else echo "36"; fi)m\]\t\[\033[00m\] \u@\h \W]$ '
+export PS1='[\[\e[\033[$(if [ "$?" != "0" ];then echo "35"; else echo "36"; fi)m\]\t\[\e[\033[00m\] \u@\h \W]$ '
 
 # オペログ取得用
 #export PS1='[\t \u@\h \W]$ '
