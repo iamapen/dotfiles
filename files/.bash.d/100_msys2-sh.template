@@ -1,13 +1,23 @@
-#
 # for MSYS2
 # vim: set ft=sh :
-#
+
+# mintty
 alias minttyR='mintty -c ~/etc/mintty/red'
 alias minttyB='mintty -c ~/etc/mintty/blue'
 alias minttyG='mintty -c ~/etc/mintty/green'
 alias minttyY='mintty -c ~/etc/mintty/yellow'
 alias minttyP='mintty -c ~/etc/mintty/pink'
 
+# php
+alias php53='/c/xampp-1.7.7/php/php.exe'
+alias php56='/c/xampp-5.6.38-0/php/php.exe'
+alias php70='/c/xampp-7.0.31-0/php/php.exe'
+alias php71='/c/xampp-7.1.21-0/php/php.exe'
+alias php72='/c/xampp-7.2.12-0/php/php.exe'
+alias php73='/c/php-7.3.2/php.exe'
+alias php='php73'
+
+# Docker for Windows
 alias docker="/c/Program\ Files/Docker/Docker/resources/bin/docker.exe"
 alias docker-compose="/c/Program\ Files/Docker/Docker/resources/bin/docker-compose.exe"
 alias docker-machine="/c/Program\ Files/Docker/Docker/resources/bin/docker-machine.exe"
