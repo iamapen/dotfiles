@@ -18,6 +18,8 @@ alias php73='/c/php-7.3.2/php.exe'
 alias php='php73'
 
 # Docker for Windows
-alias docker="/c/Program\ Files/Docker/Docker/resources/bin/docker.exe"
-alias docker-compose="/c/Program\ Files/Docker/Docker/resources/bin/docker-compose.exe"
-alias docker-machine="/c/Program\ Files/Docker/Docker/resources/bin/docker-machine.exe"
+# `docker-compose exec` でdocker.exeにPATHが通っている必要があった
+export PATH=$PATH:/c/Program\ Files/Docker/Docker/resources/bin
+#alias docker="/c/Program\ Files/Docker/Docker/resources/bin/docker.exe"
+#alias docker-compose="/c/Program\ Files/Docker/Docker/resources/bin/docker-compose.exe"
+#alias docker-machine="/c/Program\ Files/Docker/Docker/resources/bin/docker-machine.exe"
