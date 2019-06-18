@@ -19,7 +19,26 @@ alias php='php73'
 
 # Docker for Windows
 # `docker-compose exec` でdocker.exeにPATHが通っている必要があった
-export PATH=$PATH:/c/Program\ Files/Docker/Docker/resources/bin
+DOCKER_BIN_DIR="/c/Program Files/Docker/Docker/resources/bin"
+if [ -d "$DOCKER_BIN_DIR" ]; then
+  export PATH=$PATH:$DOCKER_BIN_DIR
+fi
 #alias docker="/c/Program\ Files/Docker/Docker/resources/bin/docker.exe"
 #alias docker-compose="/c/Program\ Files/Docker/Docker/resources/bin/docker-compose.exe"
 #alias docker-machine="/c/Program\ Files/Docker/Docker/resources/bin/docker-machine.exe"
+
+YARN_BIN_DIR="/c/apps (x86)/Yarn/bin"
+if [ -d "$YARN_BIN_DIR" ]; then
+  export PATH=$PATH:$YARN_BIN_DIR
+fi
+
+YARN_GLOBAL_BIN_DIR="$LOCALAPPDATA/Yarn/bin"
+if [ -d "$YARN_GLOBAL_BIN_DIR" ]; then
+  export PATH=$PATH:$YARN_GLOBAL_BIN_DIR
+fi
+
+NODE_BIN_DIR="/c/apps (x86)/Nodist/bin"
+if [ -d "$NODE_BIN_DIR" ]; then
+  export PATH=$PATH:$NODE_BIN_DIR
+fi
+
