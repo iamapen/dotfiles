@@ -37,7 +37,9 @@ if [ -d "$YARN_GLOBAL_BIN_DIR" ]; then
   export PATH=$PATH:$YARN_GLOBAL_BIN_DIR
 fi
 
-NODE_BIN_DIR="/c/apps (x86)/Nodist/bin"
+#NODE_BIN_DIR="/c/apps (x86)/Nodist/bin"
+#NODE_BIN_DIR="/c/apps/node-v10.16.0-win-x64"
+NODE_BIN_DIR="/c/apps/node-v12.4.0-win-x64"
 if [ -d "$NODE_BIN_DIR" ]; then
   export PATH=$PATH:$NODE_BIN_DIR
 fi
