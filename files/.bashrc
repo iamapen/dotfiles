@@ -14,6 +14,7 @@ export PS1='[\[\e[\033[$(if [ "$?" != "0" ];then echo "35"; else echo "36"; fi)m
 # オペログ取得用
 #export PS1='[\t \u@\h \W]$ '
 
+XDEBUG_CONFIG="remote_host=127.0.0.1 remote_enable=1 remote_autostart=1 remote_connect_back=1"
 
 
 umask 0022
